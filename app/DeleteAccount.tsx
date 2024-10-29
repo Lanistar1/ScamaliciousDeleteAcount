@@ -32,7 +32,7 @@ const DeleteAccount = () => {
         setEmail("");
         setReason("");
       } else {
-        toast.error("Failed to delete account. Please try again.");
+        toast.error("Failed to delete account. Please try again later.");
       }
     } catch (error) {
       console.error("Error deleting account:", error);
