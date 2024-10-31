@@ -43,24 +43,24 @@ const DeleteAccount = () => {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col md:flex-row h-screen">
       <ToastContainer />
       
-      {/* Left Section */}
-      <div className="w-1/2 bg-gradient-to-b from-[#023A5F] via-[#606CB6] to-[#9493DF] flex justify-center items-center">
+      {/* Left Section (Hidden on small screens) */}
+      <div className="hidden md:flex w-1/2 bg-gradient-to-b from-[#023A5F] via-[#606CB6] to-[#9493DF] justify-center items-center">
         <div className="text-center">
           <Image src="/logo.png" alt="SCAMalicious Logo" width={200} height={200} />
         </div>
       </div>
 
-      {/* Right Section */}
-      <div className="w-1/2 flex flex-col justify-center items-center bg-gray-100 relative">
-        <div className="w-2/3">
+      {/* Right Section (Full-width on small screens) */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-center bg-gray-100 p-6 sm:p-8">
+        <div className="w-full max-w-md">
           <h1 className="text-3xl text-[#A52A2A] font-normal mb-1">Delete Account</h1>
           <p className="text-md text-[#384554]">We are sad to let you go!</p>
           <p className="text-md text-[#384554] mb-6">Fill the form below to proceed.</p>
 
-          <form onSubmit={handleDeleteAccount} className="mt-8 space-y-4">
+          <form onSubmit={handleDeleteAccount} className="space-y-4">
             <div>
               <label className="block text-[#384554]">Name</label>
               <input
@@ -90,7 +90,7 @@ const DeleteAccount = () => {
               <textarea
                 id="reason"
                 placeholder="Enter reason"
-                className="h-[148px] w-[500px] rounded-[5px] bg-[#FBFBFB] border-[2px] p-5 resize-none"
+                className="w-full h-36 rounded-md bg-[#FBFBFB] border-2 p-3 resize-none focus:outline-none"
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
               />
